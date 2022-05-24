@@ -65,7 +65,16 @@ if [[ $edit_torrc = "" ]]; then
     rm -rf "$torrc_location"
   fi
 
-  cp torrc "$torrc_location"
+  obfs_location="$(which obfs4proxy)"
+
+  {
+    echo "RunAsDaemon 1"
+    echo "UseBridges 1"
+    echo "ClientTransportPlugin obfs2,obfs3,obfs4,scramblesuit exec $obfs_location"
+    echo "# Temporary"
+    echo "Bridge obfs4 185.177.207.191:8443 F25CC9227A749C5603E7D3799933026B369A5EF0 cert=LSHlzHPcfHw4mBbNz/H0NL2pKY/FiuVLVhJZ0/qxT67Ho6U6XbA7BNPSUfWDn7uXUSDndg iat-mode=0"
+  } >> "$torrc_location"
+
   echo "Add your own bridges in\n$torrc_location"
   sleep 5
 fi
