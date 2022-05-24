@@ -1,0 +1,8 @@
+RunAsDaemon 1
+
+UseBridges 1
+
+ClientTransportPlugin obfs2,obfs3,obfs4,scramblesuit exec /opt/homebrew/bin/obfs4proxy
+
+# Temporary
+Bridge obfs4 185.177.207.191:8443 F25CC9227A749C5603E7D3799933026B369A5EF0 cert=LSHlzHPcfHw4mBbNz/H0NL2pKY/FiuVLVhJZ0/qxT67Ho6U6XbA7BNPSUfWDn7uXUSDndg iat-mode=0
