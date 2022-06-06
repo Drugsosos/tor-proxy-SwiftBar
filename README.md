@@ -22,3 +22,4 @@ chmod +x install.sh && /bin/zsh install.sh
 python3 -m pip install -r requirements.txt
 ```
 
+3. Get your token on ipinfo.io and add it to tor_proxy.5m.py
